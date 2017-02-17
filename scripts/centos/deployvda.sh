@@ -41,23 +41,23 @@ pkg_mcs=("epel-release"\
 pkg_mcs_num=${#pkg_mcs[@]}
 
 
-lvda_pkg_url="https://github.com/jiz-citrix/XDLinuxVDA/blob/master/binaries/XenDesktopVDA-7.12.0.375-1.el7_2.x86_64.rpm"
+lvda_pkg_url="https://raw.githubusercontent.com/jiz-citrix/XDLinuxVDA/blob/master/binaries/XenDesktopVDA-7.12.0.375-1.el7_2.x86_64.rpm"
 lvda_pkg_name=$(echo $lvda_pkg_url | sed -e "s#.*/\(.*\)\s*#\1#")
 
-xdping_pkg_url="https://github.com/jiz-citrix/XDLinuxVDA/blob/master/binaries/linux-xdping.gz"
+xdping_pkg_url="https://raw.githubusercontent.com/jiz-citrix/XDLinuxVDA/blob/master/binaries/linux-xdping.gz"
 xdping_pkg_name=$(echo $xdping_pkg_url | sed -e "s#.*/\(.*\)\s*#\1#")
 
-kernel_module_compile_script_url="https://github.com/jiz-citrix/XDLinuxVDA/blob/master/scripts/centos/compile_usb_modules.sh"
+kernel_module_compile_script_url="https://raw.githubusercontent.com/jiz-citrix/XDLinuxVDA/blob/master/scripts/centos/compile_usb_modules.sh"
 kernel_module_compile_script=$(echo $kernel_module_compile_script_url | sed -e "s#.*/\(.*\)\s*#\1#")
 
-mcs_sysd_unit_file_url="https://github.com/jiz-citrix/XDLinuxVDA/blob/master/scripts/centos/ad_join.service"
+mcs_sysd_unit_file_url="https://raw.githubusercontent.com/jiz-citrix/XDLinuxVDA/blob/master/scripts/centos/ad_join.service"
 mcs_sysd_unit_file=$(echo $mcs_sysd_unit_file_url | sed -e "s#.*/\(.*\)\s*#\1#")
 
-mcs_boot_script_url="https://github.com/jiz-citrix/XDLinuxVDA/blob/master/scripts/centos/winbind_ad_join.sh"
+mcs_boot_script_url="https://raw.githubusercontent.com/jiz-citrix/XDLinuxVDA/blob/master/scripts/centos/winbind_ad_join.sh"
 mcs_boot_script=$(echo $mcs_boot_script_url | sed -e "s#.*/\(.*\)\s*#\1#")
 
 vhci_hcd_version=1.15
-vhci_hcd_url="https://github.com/jiz-citrix/XDLinuxVDA/blob/master/binaries/vhci-hcd-${vhci_hcd_version}.tar.bz2"
+vhci_hcd_url="https://raw.githubusercontent.com/jiz-citrix/XDLinuxVDA/blob/master/binaries/vhci-hcd-${vhci_hcd_version}.tar.bz2"
 build_dir="/tmp"
 
 
