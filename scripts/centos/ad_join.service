@@ -1,7 +1,7 @@
 [Unit]
 Description=AD Join
 ConditionFileIsExecutable=/usr/lib/mcs/winbind_ad_join.sh
-After=winbind.service,chronyd.service,ctxhdx.service,ctxvda.service,mnt-iddisk.mount
+After=winbind.service,chronyd.service,ctxhdx.service,ctxvda.service
 
 [Service]
 Type=simple
