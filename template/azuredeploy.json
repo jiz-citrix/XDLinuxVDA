@@ -2,28 +2,28 @@
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-      "adminUsername": {
+      "administratorUsername": {
         "type": "string",
         "metadata": {
           "description": "Username for the Linux VM"
         }
       },
-      "adminPassword": {
+      "administratorPassword": {
         "type": "securestring",
         "metadata": {
           "description": "User password for the Linux VM"
         }
       },
-      "vmName": {
+      "virtualMachineName": {
         "type": "string",
         "minLength": 4,
         "metadata": {
           "description": "Name for the Linux VM"
         }
       },
-      "vmSize": {
+      "virtualMachineSize": {
         "type": "string",
-        "defaultValue": "Standard_A3",
+        "defaultValue": "Standard_D2_v2",
         "allowedValues": [
           "Standard_A2",
           "Standard_A3",
@@ -58,17 +58,17 @@
     "imagePublisher": "OpenLogic",
     "imageOffer": "CentOS",
     "OSVersion": "7.2",
-    "OSDiskName": "[concat(parameters('vmName'), '_osdisk_', variables('suffix'))]",
-    "nicName": "[concat(parameters('vmName'), '_nic1_', variables('suffix'))]",
+    "OSDiskName": "[concat(variables('vmName'), '_osdisk_', variables('suffix'))]",
+    "nicName": "[concat(variables('vmName'), '_nic1_', variables('suffix'))]",
     "addressPrefix": "10.0.0.0/16",
     "subnetName": "Subnet",
     "subnetPrefix": "10.0.0.0/24",
     "vhdStorageType": "Standard_LRS",
-    "publicIPAddressName": "[concat(parameters('vmName'), '_pip_', variables('suffix'))]",
+    "publicIPAddressName": "[concat(variables('vmName'), '_pip_', variables('suffix'))]",
     "publicIPAddressType": "Dynamic",
     "vhdStorageContainerName": "vhds",
-    "vmName": "[replace(parameters('vmName'), '_', '-')]",
-    "vmSize": "[parameters('vmSize')]",
+    "vmName": "[replace(parameters('virtualMachineName'), '_', '-')]",
+    "vmSize": "[parameters('virtualMachineSize')]",
     "virtualNetworkName": "MyVNET",
     "vnetId": "[resourceId('Microsoft.Network/virtualNetworks', variables('virtualNetworkName'))]",
     "subnetRef": "[concat(variables('vnetId'), '/subnets/', variables('subnetName'))]",
@@ -175,8 +175,8 @@
         },
         "osProfile": {
           "computerName": "[variables('vmName')]",
-          "adminUsername": "[parameters('adminUsername')]",
-          "adminPassword": "[parameters('adminPassword')]"
+          "adminUsername": "[parameters('administratorUsername')]",
+          "adminPassword": "[parameters('administratorPassword')]"
         },
         "storageProfile": {
           "imageReference": {
