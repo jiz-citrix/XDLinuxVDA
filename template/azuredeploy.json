@@ -229,6 +229,29 @@
     }
   ],
   "outputs": {
-
+    "resourceGroupName": {
+      "type": "string",
+      "value": "[resourceGroup().name]"
+    },
+    "storageAccountName": {
+      "type": "string",
+      "value": "[variables('vhdStorageName')]"
+    },
+    "storageContainerName": {
+      "type": "string",
+      "value": "[variables('vhdStorageContainerName')]"
+    },
+    "vhdBlobName": {
+      "type": "string",
+      "value": "[concat(variables('OSDiskName'), '.vhd')]"
+    },
+    "vmDomainName": {
+      "type": "string",
+      "value": "[concat(variables('dnsLabelPrefix'), '.', resourceGroup().location, '.cloudapp.azure.com')]"
+    },
+    "vmName": {
+      "type": "string",
+      "value": "[variables('vmName')]"
+    } 
   }
 }
