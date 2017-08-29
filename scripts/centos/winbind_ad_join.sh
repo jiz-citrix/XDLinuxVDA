@@ -181,7 +181,7 @@ EOF
     log_echo "DNSDISID = $DNSDISID"
 
 
-    DDC=${DDCS}
+    DDCS=`echo ${DDCS} | tr ',' ' '`
     REALM=`echo $realm | tr 'a-z' 'A-Z'`
     domain=`echo ${realm} | cut -d'.' -f1`
     DOMAIN=`echo ${domain} | tr 'a-z' 'A-Z'`
